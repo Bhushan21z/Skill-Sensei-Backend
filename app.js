@@ -20,6 +20,8 @@ login = require("./routes/login");
 level1= require("./routes/level1");
 level2= require("./routes/level2");
 level3= require("./routes/level3");
+level4= require("./routes/level4");
+level5= require("./routes/level5");
 
 
 //PORT ENVIRONMENT VARIABLE  MONGODB Connect
@@ -54,7 +56,8 @@ app.use("/api/user/login", login);
 app.use("/api/game/level1",level1);
 app.use("/api/game/level2",level2);
 app.use("/api/game/level3",level3);
-
+app.use("/api/game/level4",level4);
+app.use("/api/game/level5",level5);
 
 // Starter and Error Listen Statesments
 
