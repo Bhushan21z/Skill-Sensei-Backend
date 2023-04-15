@@ -22,6 +22,8 @@ level2= require("./routes/level2");
 level3= require("./routes/level3");
 level4= require("./routes/level4");
 level5= require("./routes/level5");
+leaderboard= require("./routes/leaderboard");
+scoreboard= require("./routes/scoreboard");
 
 
 //PORT ENVIRONMENT VARIABLE  MONGODB Connect
@@ -58,6 +60,8 @@ app.use("/api/game/level2",level2);
 app.use("/api/game/level3",level3);
 app.use("/api/game/level4",level4);
 app.use("/api/game/level5",level5);
+app.use("/api/game/leaderboard",leaderboard);
+app.use("/api/game/scoreboard",scoreboard);
 
 // Starter and Error Listen Statesments
 
