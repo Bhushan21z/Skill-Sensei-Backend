@@ -11,6 +11,7 @@ router.post("/", async function (req, res, next) {
   let allData;
   let count=0,avgtime=0,avgatt=0,mintime=1000000000,minatt=1000000000,time,attempt,rank, level;
   let level1,level2,level3,level4,level5;
+  let maxtime=0,maxatt=0;
   try {
     users = await User.find();
     for (let a = 0; a < users.length; a++) {
@@ -35,6 +36,12 @@ router.post("/", async function (req, res, next) {
         }
         if(totalTime<mintime){
           mintime=totalTime;
+        }
+        if(totalAtt>maxatt){
+          maxatt=totalAtt;
+        }
+        if(totalTime>maxtime){
+          maxtime=totalTime;
         }
         let dumm = {
           rank: a,
@@ -64,6 +71,8 @@ router.post("/", async function (req, res, next) {
       attempt: attempt,
       mintime: mintime,
       minattempt: minatt,
+      maxtime: maxtime,
+      maxattempt: maxatt,
       avgtime: avgtime,
       avgattempt: avgatt,
       level: level,
